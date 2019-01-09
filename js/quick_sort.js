@@ -39,3 +39,17 @@ function swap(arr, i, j) {
 
 
 console.log(quickSort([16, 11, 9, 7, 6, 5, 3, 2], 0, 7));
+
+//Another way
+
+function qSort(arr) {
+  if (arr.length <= 1) {
+    return arr; // returns if there is 1 or less element
+  }
+  const [pivot, ...rest] = arr;
+  const left = [], right = [];
+  rest.forEach(el => el < pivot ? left.push(el) : right.push(el));
+  return qSort(left).concat(pivot).concat(qSort(right)); // sorted left array + pivot + sorted right array
+}
+
+console.log(qSort([16, 11, 9, 7, 6, 5, 3, 2]));
