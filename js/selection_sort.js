@@ -10,7 +10,7 @@ const selectionSort = function (array) {
     }
     let temp = array[i];
     array[i] = array[min];
-    array[min] = temp;
+    array[min] = temp;  // finds smallest number in the array and swaps places
   }
   return array;
 };

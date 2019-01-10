@@ -46,9 +46,9 @@ function qSort(arr) {
   if (arr.length <= 1) {
     return arr; // returns if there is 1 or less element
   }
-  const [pivot, ...rest] = arr;
+  const [pivot, ...rest] = arr; // all remaining arguments are placed in a array other than the pivot
   const left = [], right = [];
-  rest.forEach(el => el < pivot ? left.push(el) : right.push(el));
+  rest.forEach(el => el < pivot ? left.push(el) : right.push(el)); // if numbers less than pivot is pushed to the left array and if numbers greater is pushed to the right array
   return qSort(left).concat(pivot).concat(qSort(right)); // sorted left array + pivot + sorted right array
 }
 
